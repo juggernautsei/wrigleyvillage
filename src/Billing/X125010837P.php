@@ -51,7 +51,7 @@ class X125010837P
         "*" . "000000001" .
         "*" . $claim->x12gsisa14() .
         "*" . $claim->x12gsisa15() .
-        "*:" .
+        //"*:" .
         "~\n";
 
         $out .= "GS" .
@@ -96,7 +96,7 @@ class X125010837P
                 "*" . $claim->x12_submitter_name() .
                 "*" .
                 "*" .
-                "*" .
+               // "*" .
                 "*" .
                 "*" . "46" .
                 "*" . $claim->x12_sender_id();
@@ -521,8 +521,8 @@ class X125010837P
         if (!$claim->isSelfOfInsured()) {
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
-            "*" . $HLcount .
-            "*" . $HLSubscriber .
+            "*6" . //$HLcount .
+            "*1" . //$HLSubscriber .
             "*" . "23" .
             "*" . "0" .
             "~\n";
