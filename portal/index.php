@@ -557,7 +557,7 @@ if (!(isset($_SESSION['password_update']) || (!empty($GLOBALS['portal_two_pass_r
             <?php } ?>
             <?php if (isset($_GET['w'])) { ?>
             // mdsupport - Would be good to include some clue about what went wrong!
-            bsAlert(<?php echo xlj('Something went wrong. Please try again.'); ?>);
+            bsAlert(<?php echo xlj('Something went wrong. Please try again. -15'); ?>);
             <?php } ?>
             <?php // if successfully logged out
             if (isset($_GET['logout'])) { ?>
@@ -597,12 +597,12 @@ if (!(isset($_SESSION['password_update']) || (!empty($GLOBALS['portal_two_pass_r
                         dialog.alert(<?php echo xlj("Check your email inbox (and possibly your spam folder) for further instructions to reset your password. If you have not received an email, then recommend contacting the clinic.") ?>);
                         return false;
                     } else {
-                        dialog.alert(<?php echo xlj("Something went wrong. Recommend contacting the clinic.") ?>);
+                        dialog.alert(<?php echo xlj("Something went wrong. Recommend contacting the clinic. -45") ?>);
                         return false;
                     }
                 }
             }).fail(function (err) {
-                var message = <?php echo xlj('Something went wrong.') ?>;
+                var message = <?php echo xlj('Something went wrong. -56') ?>;
                 alert(message);
             });
         }

@@ -204,7 +204,7 @@ class PatientController extends AppBasePortalController
             }
 
             if (empty($_SESSION['fnameRegistration']) || empty($_SESSION['lnameRegistration']) || empty($_SESSION['dobRegistration']) || empty($_SESSION['emailRegistration']) || empty($_SESSION['token_id_holder'])) {
-                throw new Exception('Something went wrong');
+                throw new Exception('Something went wrong - 97');
             }
 
             // get new pid

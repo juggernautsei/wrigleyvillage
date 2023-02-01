@@ -49,7 +49,7 @@ if ($action == 'verify_email') {
             // check recaptcha
             $recaptcha = processRecaptcha($_POST['g-recaptcha-response'] ?? '');
             if (!$recaptcha) {
-                echo xlt("Something went wrong. Recommend contacting the clinic.");
+                echo xlt("Something went wrong. Recommend contacting the clinic -3.");
                 cleanupRegistrationSession();
                 exit;
             }
@@ -59,7 +59,7 @@ if ($action == 'verify_email') {
                 Header::setupHeader();
                 echo '<div class="alert alert-success" role="alert">' . xlt("Check your email inbox (and possibly your spam folder) for further instructions to register. If you have not received an email, then recommend contacting the clinic.") . '</div>';
             } else {
-                echo xlt("Something went wrong. Recommend contacting the clinic.");
+                echo xlt("Something went wrong. Recommend contacting the clinic. -7");
             }
         }
     }

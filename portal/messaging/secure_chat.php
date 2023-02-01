@@ -71,7 +71,7 @@ if (!empty($_POST['username'])) {
 }
 if ($usernameManipulatedFlag) {
     http_response_code(401);
-    die(xlt("Something went wrong"));
+    die(xlt("Something went wrong -81 "));
 }
 
 use OpenEMR\Core\Header;
