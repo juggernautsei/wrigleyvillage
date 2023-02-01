@@ -55,12 +55,12 @@ if (isset($_GET['woops'])) {
 }
 
 if (!empty($_GET['forward_email_verify'])) {
-    /*if (empty($GLOBALS['portal_onsite_two_register']) || empty($GLOBALS['google_recaptcha_site_key']) || empty($GLOBALS['google_recaptcha_secret_key'])) {
+    if (empty($GLOBALS['portal_onsite_two_register']) || empty($GLOBALS['google_recaptcha_site_key']) || empty($GLOBALS['google_recaptcha_secret_key'])) {
         (new SystemLogger())->debug("registration not supported, so stopped attempt to use forward_email_verify token");
         OpenEMR\Common\Session\SessionUtil::portalSessionCookieDestroy();
         header('Location: ' . $landingpage . '&w&u');
         exit();
-    }*/
+    }
 
     $crypto = new CryptoGen();
     if (!$crypto->cryptCheckStandard($_GET['forward_email_verify'])) {
