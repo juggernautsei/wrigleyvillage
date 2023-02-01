@@ -341,7 +341,7 @@ if (!(isset($_SESSION['password_update']) || (!empty($GLOBALS['portal_two_pass_r
             $_SESSION['password_update'] = 1;
             ?>
             <h2 class="title"><?php echo xlt('Please Enter New Credentials'); ?></h2>
-            <form class="form pb-5" action="get_patient_info.php" method="POST" onsubmit="return process_new_pass()">
+            <form autocomplete="off" class="form pb-5" action="get_patient_info.php" method="POST" onsubmit="return process_new_pass()">
                 <input style="display: none" type="text" name="dummyuname" />
                 <input style="display: none" type="password" name="dummypass" />
                 <div class="form-row my-3">
