@@ -445,7 +445,7 @@ if (!(isset($_SESSION['password_update']) || (!empty($GLOBALS['portal_two_pass_r
                 <legend class="bg-primary text-white pt-2 py-1"><h3><?php echo xlt('Patient Portal Login'); ?></h3></legend>
                 <div class="jumbotron jumbotron-fluid px-5 py-3">
                     <div class="form-row my-3">
-                        <label class="col-md-2 col-form-label" for="uname"><?php echo xlt('Username') ?></label>
+                        <label class="col-md-2 col-form-label" for="uname"><?php echo xlt('Email Address') ?></label>
                         <div class="col-md">
                             <input type="text" class="form-control" name="uname" id="uname" autocomplete="none" required />
                         </div>
