@@ -211,7 +211,8 @@ class BillingClaimBatch
                     $bat_sendid = trim($elems[6]);
                     $bat_recvid = trim($elems[8]);
                     $bat_sender = (!empty($GS02)) ? $GS02 : $bat_sendid;
-                    $this->bat_content = substr($seg, 0, 70) . "$this->bat_yymmdd*$this->bat_hhmm*" . $elems[11] . "*" . $elems[12] . "*$this->bat_icn*" . $elems[14] . "*" . $elems[15] . "*:~";
+                    //$this->bat_content = substr($seg, 0, 70) . "$this->bat_yymmdd*$this->bat_hhmm*" . $elems[11] . "*" . $elems[12] . "*$this->bat_icn*" . $elems[14] . "*" . $elems[15] . "*:~";
+                    $this->bat_content = substr($seg, 0, 61) . "*1$this->bat_yymmdd*$this->bat_hhmm*" . $elems[11] . "*" .$elems[12] . "*$this->bat_icn*" . $elems[14] . "*" . $elems[15] . "*:~";
                 }
                 continue;
             } elseif (!$this->bat_content) {
