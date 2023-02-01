@@ -298,8 +298,8 @@ class X125010837I
         if (!$claim->isSelfOfInsured()) {
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
-                "*6" . //"$HLcount" .
-                "*1" . //$HLSubscriber" .
+                "*" . "$HLcount" .
+                "*$HLSubscriber" .
                 "*23" .
                 "*0" .
                 "~\n";
