@@ -51,7 +51,7 @@ class X125010837P
         "*" . "000000001" .
         "*" . $claim->x12gsisa14() .
         "*" . $claim->x12gsisa15() .
-        //"*:" .
+        "*:" .
         "~\n";
 
         $out .= "GS" .
@@ -96,7 +96,7 @@ class X125010837P
                 "*" . $claim->x12_submitter_name() .
                 "*" .
                 "*" .
-               // "*" .
+                "*" .
                 "*" .
                 "*" . "46" .
                 "*" . $claim->x12_sender_id();
@@ -519,6 +519,7 @@ class X125010837P
         // Segment REF (Billing Provider Secondary Identification) omitted.
 
         if (!$claim->isSelfOfInsured()) {
+            $HLcount++;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
             "*" . $HLcount .
@@ -527,7 +528,6 @@ class X125010837P
             "*" . "0" .
             "~\n";
 
-            $HLcount++;
             ++$edicount;
             $out .= "PAT" .
             "*" . $claim->insuredRelationship() .
@@ -1631,7 +1631,8 @@ class X125010837P
                     "*" . $claim->x12_submitter_name() .
                     "*" .
                     "*" .
-                    "*" .
+                    //"*" .
+                        // for waystar
                     "*" .
                     "*" . "46" .
                     "*" . $claim->x12_sender_id();
@@ -1663,7 +1664,8 @@ class X125010837P
                     "*" .
                     "*" .
                     "*" .
-                    "*" .
+                    //"*" .
+                        //removed for waystar
                     "*" . "46" .
                     "*" . $claim->x12_sender_id();
                 // else use provider's group name
@@ -2052,19 +2054,21 @@ class X125010837P
         // Segment REF (Billing Provider Secondary Identification) omitted.
 
         if (!$claim->isSelfOfInsured()) {
+            /*$HLcount++;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
                 "*" . $HLcount .
                 "*" . $HLSubscriber .
                 "*" . "23" .
                 "*" . "0" .
-                "~\n";
+                "~\n";*/
+            //removed for way star
 
-            $HLcount++;
             ++$edicount;
-            $out .= "PAT" .
+            /*$out .= "PAT" .
                 "*" . $claim->insuredRelationship() .
-                "~\n";
+                "~\n";*/
+            //removed for waystar
 
             ++$edicount;
             $out .= "NM1" .       // Loop 2010CA Patient

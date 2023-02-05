@@ -53,7 +53,7 @@ class X125010837I
             "*" . "000000001" .
             "*" . $claim->x12gsisa14() .
             "*" . $claim->x12gsisa15() .
-            //"*:" .
+            "*:" .
             "~\n";
         $out .= "GS" .
             "*HC" .
@@ -94,8 +94,9 @@ class X125010837I
             "*" . "2" .
             "*" . $billingFacilityName .
             "*" .
-            //"*" .
             "*" .
+            //"*" .
+            //waystar
             "*" .
             "*" . "46";
 
@@ -296,14 +297,15 @@ class X125010837I
 
 
         if (!$claim->isSelfOfInsured()) {
+            /*++$HLcount;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
-                "*" . "$HLcount" .
+                "*" . $HLcount .
                 "*$HLSubscriber" .
                 "*23" .
                 "*0" .
-                "~\n";
-            $HLcount++;
+                "~\n";*/
+
             ++$edicount;
             $out .= "PAT" .
                 "*" . $claim->insuredRelationship() .
