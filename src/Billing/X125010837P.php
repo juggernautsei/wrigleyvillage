@@ -2054,20 +2054,20 @@ class X125010837P
         // Segment REF (Billing Provider Secondary Identification) omitted.
 
         if (!$claim->isSelfOfInsured()) {
-            /*$HLcount++;
+            $HLcount++;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
                 "*" . $HLcount .
                 "*" . $HLSubscriber .
                 "*" . "23" .
                 "*" . "0" .
-                "~\n";*/
+                "~\n";
             //removed for way star
 
             ++$edicount;
-            /*$out .= "PAT" .
+            $out .= "PAT" .
                 "*" . $claim->insuredRelationship() .
-                "~\n";*/
+                "~\n";
             //removed for waystar
 
             ++$edicount;

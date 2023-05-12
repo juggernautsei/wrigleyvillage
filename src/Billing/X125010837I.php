@@ -297,14 +297,14 @@ class X125010837I
 
 
         if (!$claim->isSelfOfInsured()) {
-            /*++$HLcount;
+            ++$HLcount;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
                 "*" . $HLcount .
                 "*$HLSubscriber" .
                 "*23" .
                 "*0" .
-                "~\n";*/
+                "~\n";
 
             ++$edicount;
             $out .= "PAT" .
@@ -416,14 +416,14 @@ class X125010837I
         // Patient Estimated Amount Due
         // Check logic
 
-        // $patientpaid = $claim->patientPaidAmount();
-        // if ($patientpaid != 0) {
-        // ++$edicount;
-        // $out .= "AMT" . // Patient paid amount. Page 190/220.
-        // "*F5" .
-        // "*" . $patientpaid .
-        // "~\n";
-        // }
+         $patientpaid = $claim->patientPaidAmount();
+         if ($patientpaid != 0) {
+         ++$edicount;
+         $out .= "AMT" . // Patient paid amount. Page 190/220.
+         "*F5" .
+         "*" . $patientpaid .
+         "~\n";
+         }
 
         // Segment REF*4N (Service Authorization Exception Code) omitted.
         // Segment REF*9F (Referral Number) omitted.
@@ -441,12 +441,12 @@ class X125010837I
         // This may be needed for the UB04 Claim if so change the 'MB' to 'MA'
         // if ($claim->cliaCode() && ($CMS_5010 || $claim->claimType() === 'MB')) {
         // Required by Medicare when in-house labs are done.
-        // ++$edicount;
-        // $out .= "REF" . // Clinical Laboratory Improvement Amendment Number
-        // "*X4" .
-        // "*" . $claim->cliaCode() .
-        // "~\n";
-        // }
+         ++$edicount;
+         $out .= "REF" . // Clinical Laboratory Improvement Amendment Number
+         "*X4" .
+         "*" . $claim->cliaCode() .
+         "~\n";
+
 
         // Segment REF*9A (Repriced Claim Number) omitted.
         // Segment REF*9C (Adjusted Repriced Claim Number) omitted.
