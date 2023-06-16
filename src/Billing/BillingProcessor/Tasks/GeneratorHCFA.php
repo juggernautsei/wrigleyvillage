@@ -53,7 +53,7 @@ class GeneratorHCFA extends AbstractGenerator implements GeneratorInterface, Gen
         $this->createNewPage = false;
 
         // Instantiate mainly for the filename creation
-        $this->batch = new BillingClaimBatch('.txt');
+        $this->batch = new BillingClaimBatch('.clp');
     }
 
     /**

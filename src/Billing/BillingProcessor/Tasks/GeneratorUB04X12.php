@@ -52,7 +52,7 @@ class GeneratorUB04X12 extends AbstractGenerator implements GeneratorInterface, 
 
     public function setup(array $context)
     {
-        $this->batch = new BillingClaimBatch('.txt');
+        $this->batch = new BillingClaimBatch('.clp');
 
         // This was called at top of old billing_process.php so call in setup()
         ub04_dispose();
