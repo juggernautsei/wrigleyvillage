@@ -519,7 +519,7 @@ class X125010837P
         // Segment REF (Billing Provider Secondary Identification) omitted.
 
         if (!$claim->isSelfOfInsured()) {
-            $HLcount++;
+            //$HLcount++;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
             "*" . $HLcount .
@@ -2053,7 +2053,7 @@ class X125010837P
         // Segment REF (Payer Secondary Identification) omitted.
         // Segment REF (Billing Provider Secondary Identification) omitted.
 
-        if (!$claim->isSelfOfInsured()) {
+        /*if (!$claim->isSelfOfInsured()) {
             $HLcount++;
             ++$edicount;
             $out .= "HL" .        // Loop 2000C Patient Information
@@ -2143,7 +2143,7 @@ class X125010837P
             // Segment REF*Y4 (Property and Casualty Claim Number) omitted.
             // Segment REF (Property and Casualty Patient Identifier) omitted.
             // Segment PER (Property and Casualty Patient Contact Information) omitted.
-        } // end of patient different from insured
+        } */ // end of patient different from insured
 
         $proccount = $claim->procCount();
         $clm_total_charges = 0;
